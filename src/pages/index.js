@@ -7,13 +7,14 @@ import SEO from "../components/seo"
 
 const Container = styled.div`
   display: flex;
-  height: 100%;
+  height: 90%;
   width: 100%;
   justify-content: center;
   align-items: center;
 `
 
 const Content = styled.div`
+  margin-top: -10%;
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 250px 550px;
@@ -45,16 +46,17 @@ const Intro = styled.div`
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+
     <Container>
       <Content>
         <Picture>
           <Avatar size={250} />
         </Picture>
         <Name>
-          <h1>Ryan Macy ~//</h1>
+          <h1>Ryan Macy ✌️</h1>
         </Name>
         <Intro>
-          Hi, I'm a developer, and entrepreneur. I like to make stuff.
+          Hi, I'm a developer ⌨️, and entrepreneur 👨‍🏭. I like to make stuff.
         </Intro>
       </Content>
     </Container>
