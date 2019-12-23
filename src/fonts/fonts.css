@@ -1,0 +1,23 @@
+@font-face {
+  font-family: Metropolis;
+  font-weight: 400;
+  font-style: normal;
+  src: url("Metropolis-Regular.otf") format("otf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Metropolis;
+  font-weight: 600;
+  font-style: normal;
+  src: url("Metropolis-SemiBold.otf") format("otf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Metropolis;
+  font-weight: 700;
+  font-style: normal;
+  src: url("Metropolis-Bold.otf") format("otf");
+  font-display: swap;
+}
