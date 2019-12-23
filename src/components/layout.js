@@ -31,15 +31,26 @@ const globalStyles = css`
 
   body {
     font-family: Metropolis, Arial;
+    font-size: 1.6rem;
+
+    a {
+      color: hsla(210.5, 100%, 12.4%, 0.5);
+    }
+
+    a:hover {
+      color: hsla(210.5, 100%, 12.4%, 0.8);
+      border-bottom: 2px solid #0480ff;
+      margin-top: 2px;
+    }
   }
 `
 
-const Layout = ({ children }) => (
+const Layout = ({ children, active }) => (
   <>
     <Global styles={globalStyles} />
     <LayoutContainer>
       <HeaderContainer>
-        <Header />
+        <Header active={active} />
       </HeaderContainer>
 
       <MainContainer>{children}</MainContainer>
@@ -49,6 +60,7 @@ const Layout = ({ children }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  active: PropTypes.string,
 }
 
 export default Layout

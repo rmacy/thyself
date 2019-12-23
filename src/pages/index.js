@@ -44,7 +44,7 @@ const Intro = styled.div`
 `
 
 const IndexPage = () => (
-  <Layout>
+  <Layout active="index">
     <SEO title="Home" />
 
     <Container>

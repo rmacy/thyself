@@ -12,24 +12,31 @@ const Container = styled.div`
   & > * {
     margin-right: 36px;
   }
-
-  a {
-    color: hsla(210.5, 100%, 12.4%, 0.5);
-  }
-
-  a:hover {
-    color: hsla(210.5, 100%, 12.4%, 0.8);
-    border-bottom: 2px solid #0480ff;
-    margin-top: 2px;
-  }
 `
 
-const Header = () => (
+const A = styled(Link)`
+  ${props =>
+    props.active &&
+    `
+  border-bottom: 2px solid #0480ff;
+  margin-top: 2px 
+  `}
+`
+
+const Header = ({ active }) => (
   <Container>
-    <Link to="/uses">Uses</Link>
-    <Link to="/blog">Blog</Link>
-    <Link to="/about">About</Link>
-    <Link to="/">./~</Link>
+    <A active={active === "uses"} to="/uses">
+      Uses
+    </A>
+    <A active={active === "blog"} to="/blog">
+      Blog
+    </A>
+    <A active={active === "about"} to="/about">
+      About
+    </A>
+    <A active={active === "index"} to="/">
+      ./~
+    </A>
   </Container>
 )
 
