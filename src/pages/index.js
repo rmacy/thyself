@@ -53,10 +53,23 @@ const IndexPage = () => (
           <Avatar size={250} />
         </Picture>
         <Name>
-          <h1>Ryan Macy ✌️</h1>
+          <h1>
+            Ryan Macy{" "}
+            <span role="img" aria-label="Victory Sign">
+              ✌️
+            </span>
+          </h1>
         </Name>
         <Intro>
-          Hi, I'm a developer ⌨️, and entrepreneur 👨‍🏭. I like to make stuff.
+          Hi, I'm a developer{" "}
+          <span role="img" aria-label="Keyboard">
+            ⌨️
+          </span>
+          , and entrepreneur{" "}
+          <span role="img" aria-label="Man Factory Worker">
+            👨‍🏭
+          </span>
+          . I like to make stuff.
         </Intro>
       </Content>
     </Container>

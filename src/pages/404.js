@@ -38,7 +38,10 @@ const NotFoundPage = () => (
     <Container>
       <div className="content">
         <h1>NOT FOUND</h1>
-        <img src="https://media.giphy.com/media/l3fZXTZdS6Ofi7U6A/giphy.gif" />
+        <img
+          alt="Two StarWars droids shaking their head puzzled"
+          src="https://media.giphy.com/media/l3fZXTZdS6Ofi7U6A/giphy.gif"
+        />
         <p>
           These are not the pages you're looking for... Everything seems to be
           in order...

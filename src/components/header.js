@@ -1,6 +1,7 @@
-import { Link } from "gatsby"
 import React from "react"
 import styled from "@emotion/styled"
+import PropTypes from "prop-types"
+import { Link } from "gatsby"
 
 const Container = styled.div`
   display: flex;
@@ -16,28 +17,32 @@ const Container = styled.div`
 
 const A = styled(Link)`
   ${props =>
-    props.active &&
+    props.current &&
     `
   border-bottom: 2px solid #0480ff;
   margin-top: 2px 
   `}
 `
 
-const Header = ({ active }) => (
+const Header = ({ active = "" }) => (
   <Container>
-    <A active={active === "uses"} to="/uses">
+    <A current={active === "uses"} to="/uses">
       Uses
     </A>
-    <A active={active === "blog"} to="/blog">
+    <A current={active === "blog"} to="/blog">
       Blog
     </A>
-    <A active={active === "about"} to="/about">
+    <A current={active === "about"} to="/about">
       About
     </A>
-    <A active={active === "index"} to="/">
+    <A current={active === "index"} to="/">
       ./~
     </A>
   </Container>
 )
+
+Header.propTypes = {
+  active: PropTypes.string,
+}
 
 export default Header

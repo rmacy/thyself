@@ -27,7 +27,10 @@ const Avatar = ({ size }) => {
   return (
     <Container size={size}>
       <div className="wrap">
-        <Img fixed={data.placeholderImage.childImageSharp.fixed} />
+        <Img
+          alt="A Picture of Ryan Macy drinking coffee"
+          fixed={data.placeholderImage.childImageSharp.fixed}
+        />
       </div>
     </Container>
   )
