@@ -1,8 +1,7 @@
-import React from "react"
 import styled from "@emotion/styled"
-
-import Layout from "../components/layout"
+import React from "react"
 import Avatar from "../components/avatar"
+import Layout from "../components/pageLayout"
 import SEO from "../components/seo"
 
 const Container = styled.div`
@@ -32,15 +31,15 @@ const Name = styled.div`
   grid-area: name;
 
   h1 {
-    font-size: 5rem;
-    color: #0480ff;
+    /* font-size: 5rem; */
+    /* color: #0480ff; */
   }
 `
 
 const Intro = styled.div`
   grid-area: intro;
-  font-size: 4.8rem;
-  color: hsla(210.5, 100%, 12.4%, 0.8);
+  /* font-size: 4.8rem; */
+  /* color: hsla(210.5, 100%, 12.4%, 0.8); */
 `
 
 const IndexPage = () => (
@@ -50,17 +49,17 @@ const IndexPage = () => (
     <Container>
       <Content>
         <Picture>
-          <Avatar size={250} />
+          <Avatar size={64} />
         </Picture>
         <Name>
-          <h1>
+          <h1 className="text-5xl font-medium tracking-wider">
             Ryan Macy{" "}
             <span role="img" aria-label="Victory Sign">
               ✌️
             </span>
           </h1>
         </Name>
-        <Intro>
+        <Intro className="text-4xl tracking-wide text-gray-700">
           Hi, I'm a developer{" "}
           <span role="img" aria-label="Keyboard">
             ⌨️

@@ -1,44 +1,66 @@
-import React from "react"
 import styled from "@emotion/styled"
-import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import PropTypes from "prop-types"
+import React from "react"
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  height: 100%;
-  font-size: 2.4rem;
+// const Container = styled.div`
+//   display: flex;
+//   flex-direction: row-reverse;
+//   align-items: center;
+//   height: 100%;
+//   font-size: 2.4rem;
 
-  & > * {
-    margin-right: 36px;
-  }
-`
+//   & > * {
+//     margin-right: 36px;
+//   }
+// `
 
 const A = styled(Link)`
-  ${props =>
+  ${(props) =>
     props.current &&
     `
   border-bottom: 2px solid #0480ff;
-  margin-top: 2px 
+  margin-top: 2px
   `}
 `
 
+const HeaderLink = ({ name, uri }) => (
+  <A className="text-white text-xl font-semibold tracking-wide" to={uri}>
+    {name}
+  </A>
+)
+
+const HeaderLinkMenu = ({ children }) => (
+  <ul className="items-center hidden md:flex">
+    {React.Children.map(children, (child) => (
+      <li className="mr-2 px-4 py-2 hover:bg-indigo-400 rounded transition duration-150">
+        {child}
+      </li>
+    ))}
+  </ul>
+)
+
 const Header = ({ active = "" }) => (
-  <Container>
-    <A current={active === "uses"} to="/uses">
-      Uses
-    </A>
-    <A current={active === "blog"} to="/blog">
+  <div className="bg-indigo-500 h-16 shadow-lg flex justify-center items-center">
+    {/* <Avatar size={12} /> */}
+    <HeaderLinkMenu>
+      <HeaderLink name="Blog" uri="/blog" />
+      <HeaderLink name="About" uri="/blog" />
+      <HeaderLink name="Uses" uri="/blog" />
+    </HeaderLinkMenu>
+    {/* <A current={active === "blog"} to="/blog">
       Blog
     </A>
     <A current={active === "about"} to="/about">
       About
     </A>
-    <A current={active === "index"} to="/">
-      ./~
+    <A current={active === "uses"} to="/uses">
+      Uses
     </A>
-  </Container>
+    <A current={active === "index"} to="/">
+      ~/
+    </A> */}
+  </div>
 )
 
 Header.propTypes = {

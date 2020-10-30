@@ -1,23 +1,22 @@
-import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
-import styled from "@emotion/styled"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react"
 
-const Container = styled.div`
-  width: ${props => props.size}px;
-  height: ${props => props.size}px;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-`
+// const Container = styled.div`
+//   width: ${props => props.size}px;
+//   height: ${props => props.size}px;
+//   border-radius: 50%;
+//   overflow: hidden;
+//   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+// `
 
 const Avatar = ({ size }) => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "ryan.jpg" }) {
+      placeholderImage: file(relativePath: { eq: "ryan_alaska.jpg" }) {
         childImageSharp {
-          fixed(width: 300, height: 300) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 500, quality: 100) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -25,14 +24,18 @@ const Avatar = ({ size }) => {
   `)
 
   return (
-    <Container size={size}>
-      <div className="wrap">
-        <Img
-          alt="A Picture of Ryan Macy drinking coffee"
-          fixed={data.placeholderImage.childImageSharp.fixed}
-        />
-      </div>
-    </Container>
+    <div
+      className={`rounded-full shadow-lg h-${size} w-${size} overflow-hidden`}
+    >
+      <Img
+        fadeIn
+        objectFit="cover"
+        objectPosition="center"
+        className={`w-${size} h-${size}`}
+        alt="Ryan Macy"
+        fluid={data.placeholderImage.childImageSharp.fluid}
+      />
+    </div>
   )
 }
 
