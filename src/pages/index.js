@@ -54,7 +54,7 @@ const IndexPage = () => (
             </span>
           </h1>
         </Name>
-        <Intro className="text-4xl tracking-wide text-gray-700 text-center leading-relaxed">
+        <Intro className="text-3xl tracking-wide text-gray-700 text-center leading-relaxed">
           A software developer{" "}
           <span role="img" aria-label="Keyboard">
             ⌨️
@@ -66,18 +66,24 @@ const IndexPage = () => (
           . I like to make things others find value in.
         </Intro>
         <Social className="flex justify-center items-end text-4xl text-gray-700">
-          <FontAwesomeIcon
-            icon={faTwitter}
-            className="mr-4 hover:text-indigo-600 cursor-pointer"
-          />
-          <FontAwesomeIcon
-            icon={faGithub}
-            className="mr-4 hover:text-indigo-600 cursor-pointer"
-          />
-          <FontAwesomeIcon
-            icon={faLinkedin}
-            className="mr-4 hover:text-indigo-600 cursor-pointer"
-          />
+          <a href="https://twitter.com/bitr0t_">
+            <FontAwesomeIcon
+              icon={faTwitter}
+              className="mr-4 hover:text-indigo-600 cursor-pointer"
+            />
+          </a>
+          <a href="https://github.com/rmacy">
+            <FontAwesomeIcon
+              icon={faGithub}
+              className="mr-4 hover:text-indigo-600 cursor-pointer"
+            />
+          </a>
+          <a href="https://www.linkedin.com/in/ryanmacy/">
+            <FontAwesomeIcon
+              icon={faLinkedin}
+              className="mr-4 hover:text-indigo-600 cursor-pointer"
+            />
+          </a>
         </Social>
       </Content>
     </div>
