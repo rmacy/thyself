@@ -1,26 +1,24 @@
 import styled from "@emotion/styled"
+import {
+  faGithub,
+  faLinkedin,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React from "react"
 import Avatar from "../components/avatar"
-import Layout from "../components/pageLayout"
+import Layout from "../components/homeLayout"
 import SEO from "../components/seo"
 
-const Container = styled.div`
-  display: flex;
-  height: 90%;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-`
-
 const Content = styled.div`
-  margin-top: -10%;
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 30px;
   grid-template-columns: 250px 550px;
-  grid-template-rows: 60px 1fr;
+  grid-template-rows: 60px 1fr 30px;
   grid-template-areas:
     "picture name"
-    "picture intro";
+    "picture intro"
+    "picture social";
 `
 
 const Picture = styled.div`
@@ -29,38 +27,35 @@ const Picture = styled.div`
 
 const Name = styled.div`
   grid-area: name;
-
-  h1 {
-    /* font-size: 5rem; */
-    /* color: #0480ff; */
-  }
 `
 
 const Intro = styled.div`
   grid-area: intro;
-  /* font-size: 4.8rem; */
-  /* color: hsla(210.5, 100%, 12.4%, 0.8); */
+`
+
+const Social = styled.div`
+  grid-area: social;
 `
 
 const IndexPage = () => (
   <Layout active="index">
     <SEO title="Home" />
 
-    <Container>
-      <Content>
-        <Picture>
+    <div className="flex flex-col -mt-32">
+      <Content className="bg-white rounded shadow-lg p-4">
+        <Picture className="flex justify-center items-center">
           <Avatar size={64} />
         </Picture>
-        <Name>
+        <Name className="text-center">
           <h1 className="text-5xl font-medium tracking-wider">
-            Ryan Macy{" "}
+            I'm Ryan Macy{" "}
             <span role="img" aria-label="Victory Sign">
               ✌️
             </span>
           </h1>
         </Name>
-        <Intro className="text-4xl tracking-wide text-gray-700">
-          Hi, I'm a developer{" "}
+        <Intro className="text-4xl tracking-wide text-gray-700 text-center leading-relaxed">
+          A software developer{" "}
           <span role="img" aria-label="Keyboard">
             ⌨️
           </span>
@@ -68,10 +63,24 @@ const IndexPage = () => (
           <span role="img" aria-label="Man Factory Worker">
             👨‍🏭
           </span>
-          . I like to make stuff.
+          . I like to make things others find value in.
         </Intro>
+        <Social className="flex justify-center items-end text-4xl text-gray-700">
+          <FontAwesomeIcon
+            icon={faTwitter}
+            className="mr-4 hover:text-indigo-600 cursor-pointer"
+          />
+          <FontAwesomeIcon
+            icon={faGithub}
+            className="mr-4 hover:text-indigo-600 cursor-pointer"
+          />
+          <FontAwesomeIcon
+            icon={faLinkedin}
+            className="mr-4 hover:text-indigo-600 cursor-pointer"
+          />
+        </Social>
       </Content>
-    </Container>
+    </div>
   </Layout>
 )
 

@@ -1,34 +1,20 @@
-import styled from "@emotion/styled"
 import PropTypes from "prop-types"
 import React from "react"
-import Header from "../header"
+import { HeaderLink, HeaderLinkMenu } from "../header"
 import "./index.css"
-
-const LayoutContainer = styled.div`
-  display: grid;
-  grid-template:
-    "header" 45px
-    "main" 1fr;
-  height: 100vh;
-`
-
-const MainContainer = styled.main`
-  grid-area: "main";
-`
-
-const HeaderContainer = styled.nav`
-  grid-area: "header";
-`
 
 const Layout = ({ children, active }) => (
   <>
-    <LayoutContainer>
-      <HeaderContainer>
-        <Header active={active} />
-      </HeaderContainer>
-
-      <MainContainer>{children}</MainContainer>
-    </LayoutContainer>
+    <nav className="bg-indigo-500 shadow-lg flex flex-col justify-start items-center h-64">
+      <div className="mt-12">
+        <HeaderLinkMenu>
+          <HeaderLink name="Blog" uri="/blog" />
+          <HeaderLink name="About" uri="/about" />
+          <HeaderLink name="Uses" uri="/uses" />
+        </HeaderLinkMenu>
+      </div>
+    </nav>
+    <main className="flex justify-center">{children}</main>
   </>
 )
 

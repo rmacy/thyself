@@ -1,27 +1,16 @@
-import React from "react"
 import styled from "@emotion/styled"
-
-import Layout from "../components/layout"
+import React from "react"
+import Layout from "../components/homeLayout"
 import SEO from "../components/seo"
 
 const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: hsla(210.5, 100%, 12.4%, 0.8);
   height: 100%;
 
   .content {
-    margin-top: -20%;
     text-align: center;
-  }
-
-  h1 {
-    font-size: 6rem;
-  }
-
-  p {
-    font-size: 2rem;
   }
 
   img {
@@ -39,7 +28,7 @@ const NotFoundPage = () => (
       <div className="content">
         <h1>NOT FOUND</h1>
         <img
-          alt="Two StarWars droids shaking their head puzzled"
+          alt="Two StarWars droids shaking their heads puzzled"
           src="https://media.giphy.com/media/l3fZXTZdS6Ofi7U6A/giphy.gif"
         />
         <p>

@@ -24,13 +24,13 @@ const A = styled(Link)`
   `}
 `
 
-const HeaderLink = ({ name, uri }) => (
+export const HeaderLink = ({ name, uri }) => (
   <A className="text-white text-xl font-semibold tracking-wide" to={uri}>
     {name}
   </A>
 )
 
-const HeaderLinkMenu = ({ children }) => (
+export const HeaderLinkMenu = ({ children }) => (
   <ul className="items-center hidden md:flex">
     {React.Children.map(children, (child) => (
       <li className="mr-2 px-4 py-2 hover:bg-indigo-400 rounded transition duration-150">
@@ -40,14 +40,15 @@ const HeaderLinkMenu = ({ children }) => (
   </ul>
 )
 
-const Header = ({ active = "" }) => (
-  <div className="bg-indigo-500 h-16 shadow-lg flex justify-center items-center">
+const Header = ({ children, active = "" }) => (
+  <div className="bg-indigo-500 shadow-lg flex flex-col justify-center items-center">
     {/* <Avatar size={12} /> */}
     <HeaderLinkMenu>
       <HeaderLink name="Blog" uri="/blog" />
       <HeaderLink name="About" uri="/blog" />
       <HeaderLink name="Uses" uri="/blog" />
     </HeaderLinkMenu>
+    {children}
     {/* <A current={active === "blog"} to="/blog">
       Blog
     </A>
