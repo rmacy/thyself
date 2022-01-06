@@ -59,12 +59,6 @@ const IndexPage = () => (
               className="mr-4 hover:text-indigo-600 cursor-pointer"
             />
           </a>
-          <a href="https://www.linkedin.com/in/ryanmacy/">
-            <FontAwesomeIcon
-              icon={faLinkedin}
-              className="mr-4 hover:text-indigo-600 cursor-pointer"
-            />
-          </a>
         </div>
       </Content>
     </Container>
