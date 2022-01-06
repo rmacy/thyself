@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import {
   faGithub,
-  faLinkedin,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

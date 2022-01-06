@@ -20,12 +20,6 @@ const Layout = ({ showHomeAvatar = false, children }) => (
             </Link>
           </div>
         )}
-
-        <HeaderLinkMenu>
-          <HeaderLink name="Blog" uri="/blog" />
-          <HeaderLink name="About" uri="/about" />
-          <HeaderLink name="Uses" uri="/uses" />
-        </HeaderLinkMenu>
       </div>
     </nav>
     <main>{children}</main>
